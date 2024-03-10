@@ -1,10 +1,8 @@
 score 0
-coins 0
-0,0,255-False
-64,64,64-False
+coins 5
+0,255,255-True
 255,0,0-False
 255,105,180-False
-0,255,255-True
 150,131,236-False
 50,70,0-False
 204,255,153-False
@@ -12,3 +10,7 @@ coins 0
 0,153,56-False
 255,152,52-False
 25,67,132-False
+255,192,203-False
+128,0,0-False
+128,128,0-False
+0,128,128-False

@@ -14,7 +14,7 @@ course1 = pygame.transform.scale(course, (200, 200))
 
 font = pygame.font.SysFont('comicsansms', 24)
 
-buttons = [[1080/2 - course1.get_width()/2, 260, course1.get_width(), course1.get_height(), 'Grassy Land']]
+buttons = [[1080/2 - course1.get_width()/2, 260, course1.get_width(), course1.get_height(), 'Green Land']]
 shopButton = []
 ballObjects = []
 surfaces = []
@@ -24,7 +24,7 @@ class ball():
         self.color = color
         self.locked = locked
         self.original = org
-        self.price = 10
+        self.price = 5
         self.equipped = False
         self.font = pygame.font.SysFont('comicsansms', 22)
 
@@ -58,7 +58,7 @@ class ball():
         pygame.draw.circle(surf, (0,0,0), (round(surf.get_width()/2), 25), 22)
         pygame.draw.circle(surf, self.color, (round(surf.get_width()/2), 25), 20)
         if self.locked == True:
-            label = self.font.render('Price: 10', 1, (0,0,0))
+            label = self.font.render('Price: 5', 1, (0,0,0))
             if hover:
                  buy = self.font.render('Purchase?', 1, (64,64,64))
             else:
@@ -114,7 +114,7 @@ def drawShop(pos=None, click=False):
                         root.attributes("-topmost", True)
                         root.withdraw()
                         if ballObjects[c].locked == True:
-                            if messagebox.askyesno('Confirm Purchase?', 'Are you sure you would like to purchase this new ball for 10 coins?'):
+                            if messagebox.askyesno('Confirm Purchase?'):
                                 if int(getCoins()) >= 10:
                                     ballObjects[c].unlock()
                                     oldCoins = int(getCoins())
@@ -130,7 +130,7 @@ def drawShop(pos=None, click=False):
                                             file.write(line)
                                     file.close()
                                 else:
-                                    messagebox.showerror('Insufficient coins!', 'You do not have enough coins to purchase this item!')
+                                    messagebox.showerror('Insufficient coins!')
                 
                                 try:
                                     root.destroy()
